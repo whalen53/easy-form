@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../paper-radio-group/paper-radio-group.html">
 <link rel="import" href="../paper-toggle-button/paper-toggle-button.html">
 <link rel="import" href="../paper-slider/paper-slider.html">
-<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="form-field.html">
   
 <polymer-element name="input-field" extends="form-field" kind="input" layout horizontal center noscript>
@@ -260,18 +260,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-overflow: ellipsis;
       overflow: hidden;
     }
-    paper-dropdown {
+    paper-dropdown-menu {
       width: 100%;
       background-color: transparent;
       padding: 0;
+    }
+    paper-dropdown-menu::shadow #dropdown {
+      min-width: 100%;
     }
   </style>
   <div class="floated-label" invisible?="{{value === undefined}}">
     <span class="label-text">{{label}}</span>
   </div>
-  <paper-dropdown label="{{label}}" selected="{{value}}" valueattr="textContent">
+  <paper-dropdown-menu label="{{label}}" selected="{{value}}" valueattr="textContent">
     <content></content>
-  </paper-dropdown>
+  </paper-dropdown-menu>
 </template>
 </polymer-element>
 
